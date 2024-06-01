@@ -13,6 +13,9 @@ const App = () => {
     ...item,
     id: Math.floor(Math.random() * 1000).toString(16),
   })
+  const RemoveId = (id:string) => {
+   setItems(items.filter((item) => item.id !== id))
+  }
   return (
     <>
       <div className="add-container">
@@ -28,7 +31,7 @@ const App = () => {
         </div>
       </div>
       <div>
-        <Order items={items}/>
+        <Order items={items} OnRemove={RemoveId}/>
       </div>
     </>
   )

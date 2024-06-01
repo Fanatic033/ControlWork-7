@@ -9,7 +9,7 @@ interface FoodBtnProps {
 const FoodBtn:React.FC<FoodBtnProps> = ({item, onAdd}) => {
   return (
     <div className={'btn-item'}>
-<button onClick={onAdd}>
+<button onClick={onAdd} className={'food-btn'}>
   <img src={item.image} alt={item.name}  className={'img-btn'}/>
   <div className={'item-info'}>
   <strong>{item.name}</strong>
