@@ -6,14 +6,14 @@ interface IOrderDetails {
   OnRemove: (id: string) => void;
 }
 
-const Order: React.FC<IOrderDetails> = ({items, OnRemove}) => {
+const Order: React.FC<IOrderDetails> = ({items  , OnRemove}) => {
   return (
     <>
       {items.map((item) => (
         <div key={item.id} className={'order-details'}>
           <strong>{item.name}</strong>
           <p>{item.price}</p>
-          <button onClick={() => OnRemove(item.id)}>X</button>
+          <button onClick={() => OnRemove(item.id)}>x</button>
         </div>
       ))}
     </>

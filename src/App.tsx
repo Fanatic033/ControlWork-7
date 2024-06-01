@@ -14,7 +14,7 @@ const App = () => {
     id: Math.floor(Math.random() * 1000).toString(16),
   })
   const RemoveId = (id:string) => {
-   setItems(items.filter((item) => item.id !== id))
+    setItems(items.filter((item) => item.id !== id))
   }
   return (
     <>
