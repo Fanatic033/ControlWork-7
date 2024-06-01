@@ -1,4 +1,22 @@
-
-.order-details {
+.order-info {
   display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  font-size: 20px;
+}
+
+
+.order-btn {
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+li{
+  list-style: none;
 }

@@ -5,6 +5,7 @@ import {ITEMS} from './Items.ts';
 import './Components/FoodBtn/FoodBtn.css'
 import Order from './Components/OrderDetails/Order.tsx';
 import './Components/OrderDetails/Order.css'
+import './App.css'
 
 const App = () => {
   const [items, setItems] = useState<Items[]>([]);
@@ -18,6 +19,7 @@ const App = () => {
   }
   return (
     <>
+      <div className="app-container">
       <div className="add-container">
         <h2>Add Items</h2>
         <div className="btn-container">
@@ -30,8 +32,9 @@ const App = () => {
           ))}
         </div>
       </div>
-      <div>
+      <div className={'order-container'}>
         <Order items={items} OnRemove={RemoveId}/>
+      </div>
       </div>
     </>
   )

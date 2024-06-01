@@ -4,3 +4,16 @@
   padding: 2rem;
   text-align: center;
 }
+
+.app-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-container {
+  width: 60%;
+}
+
+.order-container {
+  width: 40%;
+}

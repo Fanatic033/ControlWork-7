@@ -8,15 +8,27 @@ interface IOrderDetails {
 
 const Order: React.FC<IOrderDetails> = ({items  , OnRemove}) => {
   return (
-    <>
-      {items.map((item) => (
-        <div key={item.id} className={'order-details'}>
-          <strong>{item.name}</strong>
-          <p>{item.price}</p>
-          <button onClick={() => OnRemove(item.id)}>x</button>
-        </div>
-      ))}
-    </>
+    <div>
+      <h2>Order Details</h2>
+      {items.length === 0 ? (
+        <p>No items added</p>
+      ) : (
+        <ul>
+          {items.map((item) => (
+            <li key={item.id}>
+              <div className="order-item">
+                <div className="order-info">
+                  <p>{item.name}</p>
+                  <p>Price: {item.price}</p>
+                  <button onClick={() => OnRemove(item.id)} className={'order-btn'}>X</button>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+      <strong>Total</strong>
+    </div>
   );
 };
 
