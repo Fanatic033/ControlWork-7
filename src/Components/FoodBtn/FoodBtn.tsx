@@ -7,11 +7,13 @@ interface FoodBtnProps {
 
 const FoodBtn:React.FC<FoodBtnProps> = ({item}) => {
   return (
-    <div>
+    <div className={'btn-item'}>
 <button>
   <img src={item.image} alt={item.name}  className={'img-btn'}/>
-  <p>{item.name}</p>
-  <p>Price: {item.price}</p>
+  <div className={'item-info'}>
+  <strong>{item.name}</strong>
+  <p>Price: {item.price} KGS</p>
+  </div>
 </button>
     </div>
   );

@@ -8,11 +8,13 @@ const App = () => {
   const [items, setItems] = useState<Items[]>([]);
   return (
     <>
-      <div className={'add-container'}>
+      <div className="add-container">
         <h2>Add Items</h2>
-    {ITEMS.map((item, index) => (
-      <FoodBtn key={index} item={item} />
-    ))}
+        <div className="btn-container">
+          {ITEMS.map((item, index) => (
+            <FoodBtn key={index} item={item}/>
+          ))}
+        </div>
       </div>
     </>
   )
