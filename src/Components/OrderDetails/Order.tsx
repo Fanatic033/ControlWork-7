@@ -4,21 +4,22 @@ import React from 'react';
 interface IOrderDetails {
   items: Items[];
   OnRemove: (id: string) => void;
+  Total: number
 }
 
-const Order: React.FC<IOrderDetails> = ({items  , OnRemove}) => {
+const Order: React.FC<IOrderDetails> = ({items  , OnRemove,Total}) => {
   return (
     <div>
       <h2>Order Details</h2>
       {items.length === 0 ? (
-        <p>No items added</p>
+        <p>Order is Empty</p>
       ) : (
         <ul>
-          {items.map((item) => (
+          {items.map((item,quainity) => (
             <li key={item.id}>
               <div className="order-item">
                 <div className="order-info">
-                  <p>{item.name}</p>
+                  <p>{item.name} {quainity}</p>
                   <p>Price: {item.price}</p>
                   <button onClick={() => OnRemove(item.id)} className={'order-btn'}>X</button>
                 </div>
@@ -27,7 +28,7 @@ const Order: React.FC<IOrderDetails> = ({items  , OnRemove}) => {
           ))}
         </ul>
       )}
-      <strong>Total</strong>
+      <strong>Total: {Total}</strong>
     </div>
   );
 };

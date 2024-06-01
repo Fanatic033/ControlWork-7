@@ -17,6 +17,9 @@ const App = () => {
   const RemoveId = (id:string) => {
     setItems(items.filter((item) => item.id !== id))
   }
+  const getTotal = () =>{
+    return items.reduce((total, item) => total + item.price, 0);
+  }
   return (
     <>
       <div className="app-container">
@@ -33,7 +36,7 @@ const App = () => {
         </div>
       </div>
       <div className={'order-container'}>
-        <Order items={items} OnRemove={RemoveId}/>
+        <Order items={items} OnRemove={RemoveId} Total={getTotal()}/>
       </div>
       </div>
     </>
