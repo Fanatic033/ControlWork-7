@@ -1,0 +1,9 @@
+.img-btn{
+  width: 162px;
+  height: 125px;
+}
+.add-container{
+  width: 56%;
+  display: flex;
+  margin-left: auto;
+}
